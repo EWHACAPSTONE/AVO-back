@@ -55,7 +55,7 @@ jobs:
         aws-region: ap-northeast-2
 
     - name: Upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./avo.zip s3://$S3_BUCKET_NAME/
+      run: aws s3 cp --region ap-northeast-2 ./avo.zip s3://avo-deploy/
       
     # Deploy
     - name: Deploy
@@ -63,9 +63,9 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        aws deploy create-deployment \
-        --application-name avo \
-        --deployment-group-name avo-group \
-        --file-exists-behavior OVERWRITE \
-        --s3-location bucket=avo-deploy,bundleType=zip,key=avo.zip \ 
+        aws deploy create-deployment
+        --application-name avo
+        --deployment-group-name avo-group
+        --file-exists-behavior OVERWRITE
+        --s3-location bucket=avo-deploy,bundleType=zip,key=avo.zip
         --region ap-northeast-2
