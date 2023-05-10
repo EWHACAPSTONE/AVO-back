@@ -4,6 +4,8 @@ REPOSITORY=/home/ubuntu/app
 
 echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
+#기존 어플리케이션을 자동 종료시키지 못해 변경 사항 반영이 안되는 문제가 있었음
+#기존 코드는 PID 번호만 나오는게 아니라 한 줄이 통째로 나와서 PID만 추출할 수 있도록 수정하여 해결
 CURRENT_PID=$(pgrep -fla java | awk '{print $1}')
 
 echo "현재 구동 중인 애플리케이션 pid: $CURRENT_PID"
