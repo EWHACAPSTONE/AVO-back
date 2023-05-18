@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class FCMMessageDto {
+    private String token;
     private String title;
     private String body;
 

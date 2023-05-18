@@ -19,6 +19,7 @@ public class FCMService {
                 .setBody(messageDto.getBody())
                 .build();
         Message message = Message.builder()
+                .setToken(messageDto.getToken())
                 .setNotification(notification)
                 .build();
         try{
