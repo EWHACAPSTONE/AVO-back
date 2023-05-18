@@ -1,7 +1,10 @@
 package capstone.avo.backend.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,8 +13,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@RequestMapping("/flask")
 public class FlaskController {
-    @RequestMapping(value = "/flask", method = RequestMethod.GET)
+    @GetMapping
+    @ResponseStatus(value=HttpStatus.OK)
     public String Test() {
         String url = "http://52.78.239.63:5000/";
         String sb = "";
