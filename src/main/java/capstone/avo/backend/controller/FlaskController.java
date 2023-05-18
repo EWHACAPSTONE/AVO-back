@@ -16,7 +16,7 @@ public class FlaskController {
     @GetMapping("/test")
     @ResponseStatus(value=HttpStatus.OK)
     public String Test() {
-        String url = "http://52.78.239.63:5000/";
+        String url = "http://ec2-52-78-239-63.ap-northeast-2.compute.amazonaws.com:5000/";
         String sb = "";
 
         try {
