@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+//RestController Annotation 안하면 경로 에러남
 @RestController
 @RequestMapping("/flask")
 public class FlaskController {
@@ -26,12 +27,12 @@ public class FlaskController {
             while ((line = br.readLine()) != null) {
                 sb = sb + line + "\n";
             }
-            System.out.println("========br======" + sb.toString());
+            System.out.println("Flask에서 전달한 값 : ");
             if (sb.toString().contains("ok")) {
                 System.out.println("test");
             }
             br.close();
-            System.out.println("" + sb.toString());
+            System.out.println("" + sb.toString()+"\n");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
