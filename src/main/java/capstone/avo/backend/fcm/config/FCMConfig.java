@@ -18,8 +18,8 @@ import com.google.firebase.messaging.WebpushNotification;
 
 @Configuration
 public class FCMConfig {
-    @Bean
-     public FirebaseMessaging firebaseMessaging() throws IOException {
+     @Bean
+     FirebaseMessaging firebaseMessaging() throws IOException {
         ClassPathResource resource = new ClassPathResource("firebase/avo-push-adminsdk.json");
 
         InputStream refreshToken = resource.getInputStream();
