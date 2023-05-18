@@ -1,4 +1,4 @@
-package capstone.avo.backend.controller;
+package capstone.avo.backend.flask;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
