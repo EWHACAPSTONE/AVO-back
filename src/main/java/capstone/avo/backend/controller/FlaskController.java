@@ -13,7 +13,7 @@ import java.net.URL;
 @RestController
 @RequestMapping("/flask")
 public class FlaskController {
-    @GetMapping
+    @GetMapping("/test")
     @ResponseStatus(value=HttpStatus.OK)
     public String Test() {
         String url = "http://52.78.239.63:5000/";
