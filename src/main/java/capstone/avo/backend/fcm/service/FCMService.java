@@ -8,12 +8,16 @@ import com.google.firebase.messaging.Notification;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Service
 @RequiredArgsConstructor
 public class FCMService {
     private final FirebaseMessaging firebaseMessaging;
 
     public String sendNotification(FCMMessageDto messageDto){
+        /*
         Notification notification=Notification.builder()
                 .setTitle(messageDto.getTitle())
                 .setBody(messageDto.getBody())
@@ -21,6 +25,15 @@ public class FCMService {
         Message message = Message.builder()
                 .setToken("daqE6Gf2Q6m-XJDrrerDQW:APA91bFOLwMdZUDFbmlPPEkgxJ2OzmFRc8eUGofbwyk9ZsEZz4tNfm0Lfyewz9fwfElwTgVhx42_uokiWBPVRWpT9KUvWR46Dv_5muVbKPticv7vnF4-wW3lWISnJQv_BozZUV27zf4e")
                 .setNotification(notification)
+                .build();
+
+         */
+        Map<String, String> data = new HashMap<>();
+        data.put("title", messageDto.getTitle());
+        data.put("body", messageDto.getBody());
+        Message message = Message.builder()
+                .setToken("daqE6Gf2Q6m-XJDrrerDQW:APA91bFOLwMdZUDFbmlPPEkgxJ2OzmFRc8eUGofbwyk9ZsEZz4tNfm0Lfyewz9fwfElwTgVhx42_uokiWBPVRWpT9KUvWR46Dv_5muVbKPticv7vnF4-wW3lWISnJQv_BozZUV27zf4e")
+                .putAllData(data)
                 .build();
         try{
             firebaseMessaging.send(message);
