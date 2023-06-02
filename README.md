@@ -6,11 +6,9 @@
 >       - 우는 상황, 소리지르는 상황, 엄마,아빠를 부르는 상황: 총 3가지 상황
 >       - 한 번 진동, 두 번 진동, 세 번 진동, 연속 진동: 총 4가지 진동 설정 가능
 
-## 💡 Backend 사용 기술
-- Java, Python
-- Spring Boot, Flask
-- AWS EC2, Lambda, S3
-- raspberry
+## ⚙️ System Architecture
+<img width="824" alt="image" src="https://github.com/EWHACAPSTONE/AVO-ai/assets/86959644/9b4e4c21-73c1-4930-bbeb-a8444cf1fb29">
+
 
 ## 코드 간단 설명
 - raspberry/rasp.py : 라즈베리파이의 마이크에서 음성을 2초간 녹음 후 녹음 데이터를 s3 버킷에 업로드
