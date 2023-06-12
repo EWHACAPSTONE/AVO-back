@@ -19,7 +19,7 @@
 - lambda/lambda_function.py : s3에 새로운 객체가 업로드됨을 감지하면 flask서버, 즉 5000포트로 http request보냄
 - flask/total.py : Flask로 요청이 오면 S3 객체를 amazon transcribe와 AI repository의 model로 분석 + 분류 결과값을 spring boot의 fcm으로 전송
 - src/fcm : Firebase와 연동하여 백그라운드에서도 프론트에 알람을 보낼 수 있기 위한 용도
-- src/controller/AvoController : EC2에 배포가 잘 되었는지 테스트하기 위한 용도
+- src/controller/AvoController : EC2에 spring boot의 jar파일 배포가 잘 되었는지 테스트하기 위한 용도
 - src/flask : EC2에 Flask 배포가 잘 되었는지 테스트하기 위한 용도
 
 ## 📚 사용 스택
